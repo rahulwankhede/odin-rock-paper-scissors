@@ -34,5 +34,3 @@ function game(){
     "It's a tie!");
     console.log(`You: ${winDict["player"]}; Computer: ${winDict["computer"]}; Ties: ${winDict["tie"]}`);
 }
-
-game();

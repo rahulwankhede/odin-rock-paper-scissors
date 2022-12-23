@@ -6,7 +6,7 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     let myDict = {'Rock': 1, 'Paper': 2, 'Scissors': 3};
     let playerSelectionActual = playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
-    return winLoseDraw = (myDict[playerSelectionActual] - myDict[computerSelection] + 3) % 3;
+    return drawWinLose = (myDict[playerSelectionActual] - myDict[computerSelection] + 3) % 3;
 }
 
 function game(){
@@ -14,12 +14,12 @@ function game(){
     for(let i = 0; i < 5; i++){
         let playerSelection = prompt("Make your choice. Type rock, paper, or scissors in this box");
         let computerSelection = getComputerChoice();
-        let winLoseDraw = playRound(playerSelection, computerSelection);
-        if (winLoseDraw == 0){
+        let drawWinLose = playRound(playerSelection, computerSelection);
+        if (drawWinLose == 0){
             console.log(`It is a tie! You both selected ${computerSelection}`);
             winDict["tie"] += 1;
         }
-        else if (winLoseDraw == 1){
+        else if (drawWinLose == 1){
             console.log(`You win! ${playerSelection} beats ${computerSelection}`);
             winDict["player"] += 1;
         }
@@ -34,3 +34,5 @@ function game(){
     "It's a tie!");
     console.log(`You: ${winDict["player"]}; Computer: ${winDict["computer"]}; Ties: ${winDict["tie"]}`);
 }
+
+const buttons = document.querySelectorAll(".choice");

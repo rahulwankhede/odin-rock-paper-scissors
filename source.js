@@ -38,6 +38,7 @@ function game(){
 let winDict = {"player": 0, "computer": 0, "tie": 0};
 
 const resultDiv = document.querySelector(".results");
+const scoreDiv = document.querySelector(".score");
 
 function doSomething(e){
 	const playerSelection = e.target.textContent;
@@ -46,18 +47,19 @@ function doSomething(e){
 	let drawWinLose = playRound(playerSelection, computerSelection);
 
     if (drawWinLose == 0){
-        resultDiv.innerText =  `It is a tie! You both selected ${computerSelection}`;
         winDict["tie"] += 1;
-    }
+        resultDiv.innerText =  `It is a tie! You both selected ${computerSelection}`;
+	}
     else if (drawWinLose == 1){
-        resultDiv.innerText = `You win! ${playerSelection} beats ${computerSelection}`;
 		winDict["player"] += 1;
-    }
+        resultDiv.innerText = `You win! ${playerSelection} beats ${computerSelection}`;
+	}
     else{
-        resultDiv.innerText = `You lose! ${computerSelection} beats ${playerSelection}`;
 		winDict["computer"] += 1;
-    }
- }
+        resultDiv.innerText = `You lose! ${computerSelection} beats ${playerSelection}`;
+	}
+	scoreDiv.innerText = `You: ${winDict["player"]}	Computer: ${winDict["computer"]}	Ties: ${winDict["tie"]}`
+}
 
 const buttons = document.querySelectorAll(".choice");
 

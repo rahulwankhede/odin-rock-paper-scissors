@@ -39,6 +39,7 @@ let winDict = {"player": 0, "computer": 0, "tie": 0};
 
 const resultDiv = document.querySelector(".results");
 const scoreDiv = document.querySelector(".score");
+const finalDiv = document.querySelector(".final");
 
 function doSomething(e){
 	const playerSelection = e.target.textContent;
@@ -59,6 +60,11 @@ function doSomething(e){
         resultDiv.innerText = `You lose! ${computerSelection} beats ${playerSelection}`;
 	}
 	scoreDiv.innerText = `You: ${winDict["player"]}	Computer: ${winDict["computer"]}	Ties: ${winDict["tie"]}`
+
+	if (winDict["player"] == 5 || winDict["computer"] == 5){
+		finalDiv.innerText = `Game over. You ${winDict["player"] == 5 ? "win!" : "lose!"}`;
+	}
+
 }
 
 const buttons = document.querySelectorAll(".choice");

@@ -36,3 +36,7 @@ function game(){
 }
 
 const buttons = document.querySelectorAll(".choice");
+
+for(button of buttons){
+	button.addEventListener('click', doSomething);
+}

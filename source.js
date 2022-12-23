@@ -35,19 +35,25 @@ function game(){
     console.log(`You: ${winDict["player"]}; Computer: ${winDict["computer"]}; Ties: ${winDict["tie"]}`);
 }
 
+let winDict = {"player": 0, "computer": 0, "tie": 0};
+
 function doSomething(e){
 	const playerSelection = e.target.textContent;
     const computerSelection = getComputerChoice();
     let drawWinLose = playRound(playerSelection, computerSelection);
     if (drawWinLose == 0){
         console.log(`It is a tie! You both selected ${computerSelection}`);
+        winDict["tie"] += 1;
     }
     else if (drawWinLose == 1){
         console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+		winDict["player"] += 1;
     }
     else{
         console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+		winDict["computer"] += 1;
     }
+	console.log(winDict);
  }
 
 const buttons = document.querySelectorAll(".choice");

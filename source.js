@@ -36,4 +36,5 @@ function game(){
 }
 
 const button = document.querySelector("#ready");
-console.log(button);
+
+button.addEventListener('click', game);

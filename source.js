@@ -34,7 +34,3 @@ function game(){
     "It's a tie!");
     console.log(`You: ${winDict["player"]}; Computer: ${winDict["computer"]}; Ties: ${winDict["tie"]}`);
 }
-
-const button = document.querySelector("#ready");
-
-button.addEventListener('click', game);

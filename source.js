@@ -62,7 +62,7 @@ function doSomething(e){
 	scoreDiv.innerText = `You: ${winDict["player"]}	Computer: ${winDict["computer"]}	Ties: ${winDict["tie"]}`
 
 	if (winDict["player"] == 5 || winDict["computer"] == 5){
-		finalDiv.innerText = `Game over. You ${winDict["player"] == 5 ? "win!" : "lose!"}`;
+		finalDiv.innerText = `Game over. You ${winDict["player"] == 5 ? "win!" : "lose!"}\n Refresh page to play again`;
 	}
 
 }
